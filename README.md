@@ -1,15 +1,5 @@
 # 0x08 : 2D Animations (Project) #
 
-|                         |                           |
-|-------------------------|---------------------------|
-| Code                    | 0x08                      |
-| First Submission Opens  | Wed 10 Apr 2024 17:00 hrs |
-| First Deadline          | Sat 13 Apr 2024 08:00 hrs |
-| Second Submission Opens | Wed 10 Apr 2024 17:00 hrs |
-| Second Deadline         | Mon 22 Apr 2024 08:00 hrs |
-| Weightage               | 6 marks                   |
-
-
 ### Step 1: Storyboard ###
 
 [What is a
