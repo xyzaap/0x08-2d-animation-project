@@ -29,3 +29,19 @@ its tranforms and /or its fill/stroke styles.
 
 As a project this gets submitted on the second
 deadline.
+
+## Submit ##
+
+### Storyboard ###
+
+1. Git URL
+2. Commit ID
+3. Storyboard (One image containing the storyboard)
+
+### Final Project ###
+
+1. Git URL
+2. Commit ID
+3. Storyboard (One image containing the storyboard)
+3. Teaser
+4. Video Link
