@@ -1,4 +1,9 @@
 function main() {
+  const experiment = new Experiment()
+
+  // Update Candidate Details
+  updateCandidateDetails(Experiment)
+
   const sel = '#myCanvas'
   canvasSetup(sel)
   const {canvas, ctx, bb} = getCanvas(sel)
@@ -25,15 +30,30 @@ function main() {
 	= window.requestAnimationFrame(stepperThreeFn)
   // --------------------------------------------------
 
-  // Clock
-  // --------------------------------------------------
-  const clock = new Clock(sel)
-  // const ms = document.timeline.currentTime
-  // clock.draw(ms)
-  // clock.draw(ms+25000)
-  const clockRafFn = (ts) => {
-    clock.draw(ts)
-    window.requestAnimationFrame(clockRafFn)
+  experiment.run()
+}
+
+function updateCandidateDetails({rollNo,name}) {
+  let isValidRollNo, isValidName
+  isValidRollNo = (isValidName = false)
+
+  // Validate RollNo
+  rollNo = Number(rollNo)
+  isValidRollNo = !isNaN(rollNo) && 9999999 < rollNo
+  if (!isValidRollNo) {
+    console.warn({invalidRollNo: rollNo})
   }
-  const clockRaf = window.requestAnimationFrame(clockRafFn)
+
+  // Validate Name
+  const titleCasePat = /^[A-Z][a-z]+( [A-Z][a-z]+)*$/
+  name = String(name).trim()
+  isValidName = titleCasePat.test(name)
+  if (!isValidName) {
+    console.warn({invalidName: name})
+  }
+  
+  if (isValidRollNo && isValidName) {
+    document.querySelector('#by')
+      .textContent = `By: ${name} (${rollNo})`
+  }
 }

@@ -159,8 +159,9 @@ function stepperOne(ts) {
 
     if (0 < S.fillDuration) {
       S.message = {
-	fillDuration: S.fillDuration,
-	runningFillDurationAverage: S.runningFillDurationAverage,
+	fillDuration: S.fillDuration.toFixed(4),
+	runningAverage: S
+	  .runningFillDurationAverage.toFixed(4),
 	fps: Math.floor(S.fps),
       }
 

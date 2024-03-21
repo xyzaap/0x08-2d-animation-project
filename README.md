@@ -1,5 +1,7 @@
 # 0x08 : 2D Animations (Project) #
 
+![](./assets/teaser.png)
+
 ### Step 1: Storyboard ###
 
 [What is a
@@ -27,7 +29,3 @@ its tranforms and /or its fill/stroke styles.
 
 As a project this gets submitted on the second
 deadline.
-
-## Example ##
-
-Please look into the branch `example`.
