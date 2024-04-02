@@ -33,6 +33,7 @@ function main() {
   experiment.run()
 }
 
+// FIXME: Relax the validators for multiple names
 function updateCandidateDetails({rollNo,name}) {
   let isValidRollNo, isValidName
   isValidRollNo = (isValidName = false)

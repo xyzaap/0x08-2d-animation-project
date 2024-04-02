@@ -2,6 +2,8 @@
 
 ![](./assets/teaser.png)
 
+## Assignment ##
+
 ### Step 1: Storyboard ###
 
 [What is a
