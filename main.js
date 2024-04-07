@@ -35,7 +35,7 @@ function main() {
 
 // FIXME: Relax the validators for multiple names
 function updateCandidateDetails({rollNos,names}) {
-  let isValidRollNo, isValidName, act, byMessage, n
+  let isValidRollNo, isValidName, act, byHtml, n
   isValidRollNo = (isValidName = false)
 
   // Validate RollNo
@@ -78,31 +78,27 @@ function updateCandidateDetails({rollNos,names}) {
       return isValidName
     })
   
-  byMessage = ''
+  byHtml = ''
 
   n = Math.min(names.length, rollNos.length)
   for (const i of Array(n).keys()) {
     if (0 < i)
-      byMessage = `${byMessage}, `
+      byHtml = `${byHtml}<span class="p-2">|</span>`
 
-    byMessage = `${byMessage}${rollNos[i]}:${names[i]}`
-  }
-
-  if (0 < byMessage.length) {
-    byMessage = `(${byMessage})`
+    byHtml = `${byHtml}<code>${rollNos[i]}</code> : ${names[i]}`
   }
 
   if (0 < act.length) {
-    byMessage = `${act} ${byMessage}`
+    byHtml = `<strong>${act}</strong><br class="hidden md:inline"/><span class="p-4 md:hidden">&mdash;</span>${byHtml}`
   }
 
-  if (0 < byMessage.length) {
-    byMessage = `By: ${byMessage}`
+  if (0 < byHtml.length) {
+    byHtml = `Created by ${byHtml}`
   } else {
-    byMessage
+    byHtml
       = 'Error parsing candidate details. Check console.'
   }
 
   document.querySelector('#by')
-    .textContent = byMessage
+    .innerHTML = byHtml
 }
