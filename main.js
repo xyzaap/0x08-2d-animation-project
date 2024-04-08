@@ -1,12 +1,11 @@
+const canvasSel = '#myCanvas'
+const {canvas, ctx, bb} = getCanvas(canvasSel)
+
 function main() {
   const experiment = new Experiment()
 
   // Update Candidate Details
   updateCandidateDetails(Experiment)
-
-  const sel = '#myCanvas'
-  canvasSetup(sel)
-  const {canvas, ctx, bb} = getCanvas(sel)
 
   console.log({canvas, ctx, bb})
 
@@ -81,4 +80,25 @@ function updateCandidateDetails({rollNos,names}) {
 
   document.querySelector('#by')
     .innerHTML = byHtml
+}
+
+
+function saveCanvas() {
+  const link = document.createElement('a');
+  const {canvas, ctx, bb} = getCanvas(canvasSel)
+  link.download = `${slug(Experiment.rollNos)}-${slug(document.title)}-canvas.png`;
+  link.href = canvas.toDataURL()
+  link.click();  
+}
+
+
+// ----------------------------------------------------
+// String Manipulations
+// ----------------------------------------------------
+function slug(s) {
+  return s
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter(s=>0<s.length)
+    .join('-')
 }
